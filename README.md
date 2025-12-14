@@ -109,6 +109,45 @@ npm start
 curl http://localhost:3000/api/test
 ```
 
+## 🚀 배포 (Railway / Render)
+
+### Railway 배포 (추천 - 가장 빠름)
+
+1. **Railway 가입**: https://railway.app → GitHub 로그인
+2. **프로젝트 생성**: "New Project" → "Deploy from GitHub repo" → 저장소 선택
+3. **MySQL 추가**: "New" → "Database" → "MySQL" 선택
+4. **환경변수 설정**: Railway가 자동으로 생성한 MySQL 환경변수를 확인
+   - Variables 탭에서 `MYSQLHOST`, `MYSQLUSER`, `MYSQLPASSWORD`, `MYSQLDATABASE`, `MYSQLPORT` 확인
+   - 이 값들이 자동으로 사용됩니다 (코드에서 자동 감지)
+5. **데이터베이스 초기화**: Railway MySQL의 "Connect" 탭에서 연결 정보 확인 후 `university.sql` 실행
+6. **배포 완료**: 자동으로 배포되며 URL이 생성됩니다
+
+### Render 배포
+
+1. **Render 가입**: https://render.com → GitHub 로그인
+2. **Web Service 생성**: "New Web Service" → 저장소 선택
+   - Build Command: `npm install`
+   - Start Command: `npm start`
+3. **MySQL 데이터베이스 생성**: "New PostgreSQL" 또는 "New MySQL" 선택
+4. **환경변수 설정**: Web Service의 "Environment" 탭에서:
+   ```
+   DB_HOST=<MySQL 호스트>
+   DB_USER=<MySQL 사용자>
+   DB_PASS=<MySQL 비밀번호>
+   DB_NAME=<데이터베이스 이름>
+   DB_PORT=3306
+   ```
+5. **데이터베이스 초기화**: Render MySQL의 "Connect" 정보로 `university.sql` 실행
+
+### 환경변수 자동 감지
+
+코드는 다음 환경변수 이름을 자동으로 지원합니다:
+- `DB_HOST` 또는 `MYSQLHOST` 또는 `MYSQL_HOST`
+- `DB_USER` 또는 `MYSQLUSER` 또는 `MYSQL_USER`
+- `DB_PASS` 또는 `DB_PASSWORD` 또는 `MYSQLPASSWORD` 또는 `MYSQL_PASSWORD`
+- `DB_NAME` 또는 `MYSQLDATABASE` 또는 `MYSQL_DATABASE`
+- `DB_PORT` 또는 `MYSQLPORT` 또는 `MYSQL_PORT` (기본값: 3306)
+
 ## 📋 환경변수 (.env.example)
 
 | 변수명 | 설명 | 예시 형식 |
