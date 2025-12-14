@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재능대학교 강의실 정보 및 예약</title>
+    <link rel="stylesheet" href="classroom-styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">재능대학교 강의실 정보&예약</div>
+            <ul class="nav-links">
+                <li><a href="index.html">캠퍼스 맵</a></li>
+                <li><a href="index.html#events-section">이벤트/캠페인</a></li>
+                <li><a href="#about">예약 관리자</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- 건물 및 강의실 정보 섹션 -->
+            
+<section class="building-info">
+    <h1 id="building-title">재능관 강의실 A101</h1>
+    <div class="info-description">
+        <h2 id="room-facilities">수용 인원: 40명</h2>
+    </div>
+</section>
+
+
+
+<!-- 강의실 이미지 슬라이드 섹션 -->
+<section class="classroom-visual">
+    <div class="classroom-carousel">
+        <div class="carousel-container" id="classroom-carousel">
+            <div class="carousel-item active">
+                <img id="classroom-image" src="img/placeholder.jpg" alt="강의실 이미지">
+            </div>
+        </div>
+        
+    <div class="classroom-description">
+        <h3 id="room-name">강의실 이름</h3>
+        <p id="room-capacity">수용 인원: 0명</p>
+    </div>
+
+        <div class="carousel-controls">
+            <button id="prev-slide" class="carousel-control">&lt;</button>
+            <button id="next-slide" class="carousel-control">&gt;</button>
+        </div>
+    </div>
+    <div class="thumbnails" id="image-thumbnails">
+        <!-- 썸네일 이미지들은 JavaScript로 동적 생성 -->
+    </div>
+</section>
+
+            <!-- 예약 정보 섹션 -->
+            <section class="reservation-info">
+                <div class="usage-time">
+                    <h3>9:00 ~ 17:00 사이만 이용가능 이를 내가 원하는 시간만큼(최대 4시간) 예약할수있는 형식</h3>
+                    
+                    <div class="reservation-form">
+                        <div class="time-selector">
+                            <div class="form-group">
+                                <label for="reservation-date">예약 날짜</label>
+                                <input type="date" id="reservation-date" min="">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="start-time">시작 시간</label>
+                                <select id="start-time">
+                                    <option value="9">09:00</option>
+                                    <option value="10">10:00</option>
+                                    <option value="11">11:00</option>
+                                    <option value="12">12:00</option>
+                                    <option value="13">13:00</option>
+                                    <option value="14">14:00</option>
+                                    <option value="15">15:00</option>
+                                    <option value="16">16:00</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="duration">이용 시간</label>
+                                <select id="duration">
+                                    <option value="1">1시간</option>
+                                    <option value="2">2시간</option>
+                                    <option value="3">3시간</option>
+                                    <option value="4">4시간</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="time-display">
+                            <div class="selected-time">
+                                <span id="selected-time-display">선택된 시간: 09:00 - 10:00</span>
+                            </div>
+                        </div>
+                        
+                        <button id="check-availability" class="btn primary">예약 가능 여부 확인</button>
+                    </div>
+                </div>
+                
+                <div class="reservation-guide">
+                    <h3>학번 및 이름을 입력받고 검증버튼(재능대 학생 DB)
+                    검증 버튼 누른후 활성화되는 강의실 예약버튼</h3>
+                    
+                    <div class="verification-form">
+                        <div class="form-group">
+                            <label for="student-id">학번</label>
+                            <input type="text" id="student-id" placeholder="학번을 입력하세요">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="student-name">이름</label>
+                            <input type="text" id="student-name" placeholder="이름을 입력하세요">
+                        </div>
+                        
+                        <button id="verify-student" class="btn secondary">학생 인증</button>
+                    </div>
+                    
+                    <div class="reservation-button">
+                        <button id="reserve-room" class="btn primary" disabled>강의실 예약하기</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 재능대학교. All rights reserved.</p>
+    </footer>
+
+    <script src="classroom-script.js"></script>
+</body>
+</html>

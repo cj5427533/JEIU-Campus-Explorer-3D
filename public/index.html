@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재능대 3D 캠퍼스와 이벤트&캠페인</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Three.js 라이브러리 -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">재능대 캠퍼스 맵과 이벤트&캠페인</div>
+            <ul class="nav-links">
+                <li><a href="#map">캠퍼스 맵</a></li>
+                <li><a href="#events-section">이벤트/캠페인</a></li>
+                <li><a href="#about">예약 관리자</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 3D 맵 섹션 -->
+        <section id="map-container">
+            <div id="map-controls">
+                <button id="toggle-mode" class="control-button">
+                    <span>3D 뷰 조작</span>
+                </button>
+            </div>
+            <div id="canvas-container"></div>
+            
+        <!-- 건물 팝업창 -->
+        <div id="building-popup" class="hidden">
+            <div class="popup-content">
+                <h3 id="popup-title">건물 이름</h3>
+                <div id="popup-image">
+                    <img src="placeholder.jpg" alt="건물 이미지">
+                </div>
+                <p id="popup-description">건물에 대한 설명이 여기에 표시됩니다.</p>
+                
+                <!-- 이벤트 정보 섹션 -->
+                <div id="popup-events" class="popup-events-section hidden">
+                    <h4 id="events-title">이벤트 및 캠페인</h4>
+                    <div id="events-content">
+                        <!-- 이벤트 내용이 여기에 들어갑니다 -->
+                    </div>
+                </div>
+                
+                <div class="popup-button-group">
+                    <button id="popup-button">강의실 정보 및 예약</button>
+                    <button id="popup-close">닫기</button>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <section id="events-section">
+            <h2>학교 이벤트 및 캠페인</h2>
+            <div class="events-grid">
+                <!-- 이벤트 항목은 JavaScript로 동적 생성 -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 재능대학교. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

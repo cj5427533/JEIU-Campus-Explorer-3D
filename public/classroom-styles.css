@@ -1,0 +1,423 @@
+/* 기본 스타일 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e74c3c;
+}
+
+/* 메인 컨텐츠 스타일 */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* 건물 및 강의실 정보 섹션 */
+.building-info {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.building-info h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.info-description h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* 강의실 이미지 섹션 */
+.classroom-visual {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* classroom-styles.css에 추가 */
+.main-image {
+    width: 100%;
+    height: auto; /* 고정 높이 대신 자동 높이 사용 */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+}
+
+.main-image img {
+    width: 100%;
+    height: auto; /* 비율 유지 */
+    object-fit: contain; /* 이미지를 컨테이너에 맞게 조정하되 비율 유지 */
+    display: block;
+    max-height: 500px; /* 최대 높이 설정 */
+}
+
+/* 썸네일 스타일 개선 */
+.thumbnails {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    justify-content: center; /* 중앙 정렬 */
+}
+
+.thumbnail {
+    width: 100px;
+    height: 70px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+    flex-shrink: 0; /* 크기가 줄어들지 않도록 설정 */
+}
+
+.thumbnail.active {
+    border-color: #e74c3c;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 썸네일 이미지가 컨테이너에 꽉 차도록 */
+}
+
+/* 슬라이드 컨트롤 버튼 스타일 개선 */
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.carousel-control {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* 예약 정보 섹션 */
+.reservation-info {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.usage-time h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #4682B4;
+    margin-bottom: 1.5rem;
+}
+
+.reservation-form {
+    margin-bottom: 2rem;
+}
+
+.time-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+.time-display {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.selected-time {
+    font-weight: 500;
+    color: #333;
+}
+
+.reservation-guide h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #4682B4;
+    margin-bottom: 1.5rem;
+}
+
+.verification-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn.primary {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #c0392b;
+}
+
+.btn.secondary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn.secondary:hover {
+    background-color: #2980b9;
+}
+
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.reservation-button {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#reserve-room {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+/* 강의실 목록 섹션 */
+.classrooms-list {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.classrooms-list h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #222;
+}
+
+.classroom-carousel {
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* 이미지 컨테이너 수정 */
+.carousel-item {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 550px; /* 높이 증가 */
+    overflow: hidden;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+/* 이미지 자체 스타일 수정 */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 이미지 비율 유지하면서 컨테이너에 맞추기 */
+    max-height: none; /* 최대 높이 제한 제거 */
+}
+
+/* 전체 강의실 시각 섹션 너비 조정 */
+.classroom-visual {
+    background-color: #fff;
+    padding: 1.5rem; /* 패딩 약간 줄임 */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    width: 100%;
+}
+
+/* 썸네일 컨테이너 조정 */
+.thumbnails {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    justify-content: center;
+}
+
+/* 썸네일 이미지 크기 조정 */
+.thumbnail {
+    width: 120px; /* 크기 증가 */
+    height: 90px; /* 크기 증가 */
+    border: 3px solid transparent;
+}
+
+.thumbnail.active {
+    border-color: #e74c3c;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.carousel-control {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    color: #777;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .time-selector,
+    .verification-form {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .form-group {
+        min-width: 100%;
+    }
+    
+    .main-image {
+        height: 300px;
+    }
+}
